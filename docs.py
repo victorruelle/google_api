@@ -3,7 +3,7 @@ from googleapiclient.discovery import build
 import json
 from os import path
 
-from drive import move_file
+from drive import move
 
 CURDIR = path.dirname(path.abspath(__file__))
 
@@ -127,7 +127,7 @@ class GoogleDoc():
         response = doc.service.documents().create(body=file_metadata).execute()
         if parent is not None:
             documentId = response.get("documentId")
-            _ = move_file(documentId,parent)
+            _ = move(documentId,parent)
         doc.documentId = response.get("documentId")
         doc.url = doc.url.format(doc.documentId)
         doc.history.append({"request":{"create":{"body":{"title":name}}},"response":response})
