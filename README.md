@@ -6,6 +6,11 @@ Google's API are great but require quite some work to use efficiently. We've bui
 - create, load, read, write and style Google Sheets effortlesly
 - create, load, write with styles Google Docs effortlesly
 
+Work is based on the following API versions:
+- drive : v3
+- sheets : v4
+- docs : v2
+
 ## Setup methods
 
 To yourself up, run ```python setup.py``` with any of the ```-drive -docs -sheets``` options. This will automatically create credentials and tokens after taking you to Google's login page. Beware that you still need to enalbe the APIs on your account. To do so, you need to press the button "Enable ... API" for each API you mean to use:
@@ -129,3 +134,7 @@ requests = [
 doc.add_writes(requests)
 doc.execute()
 ```
+
+## Next Steps
+
+- [ ] Add reading and robust styling for GoogleDocs
